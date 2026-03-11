@@ -34,7 +34,7 @@ pins:
   - pin: 6
     id: E8
     class: outputs
-    ts_name: Lowide 6 (Black A6)
+    ts_name: Lowside 6 (Black A6)
     type: ls
 
   - pin: 7

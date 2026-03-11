@@ -24,7 +24,7 @@ pins:
   - pin: 7
     id: [E6, E6]
     class: [event_inputs, switch_inputs]
-    ts_name: Digital 1 or VR/Hall (Grey A7, Grey A5/C6)
+    ts_name: Digital 2 or VR/Hall (Grey A7-A5/C6)
     type: din
 
   - pin: 8
@@ -37,7 +37,7 @@ pins:
     type: 5v
 
   - pin: 11
-    id: [A1, EFI_ADC_10]
+    id: [A1, EFI_ADC_1]
     class: [switch_inputs, analog_inputs]
     ts_name: Analog Volt 1 (Grey B3)
     type: av
@@ -49,7 +49,7 @@ pins:
     type: din
 
   - pin: 13
-    id: [A4, EFI_ADC_9]
+    id: [A4, EFI_ADC_4]
     class: [switch_inputs, analog_inputs]
     ts_name: Analog Volt 3 (Grey B5)
     type: av
@@ -60,7 +60,7 @@ pins:
   - pin: 15
     id: [C13, C13]
     class: [event_inputs, switch_inputs]
-    ts_name: Digital 1 or VR/Hall (Grey B7, A6/B6)
+    ts_name: Digital 1 or VR/Hall (Grey B7-A6/B6)
     type: din
 
   - pin: 16
@@ -73,19 +73,19 @@ pins:
     type: 5v
 
   - pin: 19
-    id: [B0, EFI_ADC_12]
+    id: [B0, EFI_ADC_10]
     class: [switch_inputs, analog_inputs]
     ts_name: Analog Volt 2 (Grey C3)
     type: av
 
   - pin: 20
-    id: [A2, EFI_ADC_14]
+    id: [A2, EFI_ADC_2]
     class: [switch_inputs, analog_inputs]
     ts_name: Analog Temp 1 (Grey C4)
     type: at
 
   - pin: 21
-    id: [A3, EFI_ADC_11]
+    id: [A3, EFI_ADC_3]
     class: [switch_inputs, analog_inputs]
     ts_name: Analog Temp 2 (Grey C5)
     type: at

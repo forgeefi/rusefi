@@ -10,7 +10,7 @@ Gpio GENERATED_OUTPUTS[] = {
 	Gpio::D14, // Lowside 3 (Black A3)
 	Gpio::D15, // Lowside 4 (Black A4)
 	Gpio::E9, // Lowside 5 (Black A5)
-	Gpio::E8, // Lowide 6 (Black A6)
+	Gpio::E8, // Lowside 6 (Black A6)
 	Gpio::E15, // Lowside 7 (Black A7)
 	Gpio::E14, // Lowside 8 (Black A8)
 	Gpio::E10, // Lowside 9 (Black C1)
@@ -32,7 +32,7 @@ Gpio GENERATED_OUTPUTS[] = {
 // "Lowside 3 (Black A3)",
 // "Lowside 4 (Black A4)",
 // "Lowside 5 (Black A5)",
-// "Lowide 6 (Black A6)",
+// "Lowside 6 (Black A6)",
 // "Lowside 7 (Black A7)",
 // "Lowside 8 (Black A8)",
 // "Lowside 9 (Black C1)",

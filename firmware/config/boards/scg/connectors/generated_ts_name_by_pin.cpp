@@ -14,7 +14,7 @@ const char * getBoardSpecificPinName(brain_pin_e brainPin) {
 		case Gpio::B0: return "Analog Volt 2 (Grey C3)";
 		case Gpio::B14: return "Highside 8 (Black B8)";
 		case Gpio::B15: return "Highside 7 (Black B7)";
-		case Gpio::C13: return "Digital 1 or VR/Hall (Grey B7, A6/B6)";
+		case Gpio::C13: return "Digital 1 or VR/Hall (Grey B7-A6/B6)";
 		case Gpio::C6: return "Lowside 12 (Black C4)";
 		case Gpio::C7: return "Lowside 11 (Black C3)";
 		case Gpio::D10: return "Highside 2 (Black B2)";
@@ -34,8 +34,8 @@ const char * getBoardSpecificPinName(brain_pin_e brainPin) {
 		case Gpio::E15: return "Lowside 7 (Black A7)";
 		case Gpio::E2: return "Lowside 13 0.7A (Black C5)";
 		case Gpio::E5: return "Tachometer (Black C6)";
-		case Gpio::E6: return "Digital 1 or VR/Hall (Grey A7, Grey A5/C6)";
-		case Gpio::E8: return "Lowide 6 (Black A6)";
+		case Gpio::E6: return "Digital 2 or VR/Hall (Grey A7-A5/C6)";
+		case Gpio::E8: return "Lowside 6 (Black A6)";
 		case Gpio::E9: return "Lowside 5 (Black A5)";
 		default: return nullptr;
 	}
