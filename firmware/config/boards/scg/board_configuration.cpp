@@ -19,17 +19,15 @@ static void setCanFrankensoDefaults() {
 }
 
 Gpio getWarningLedPin() {
-    // open question if we need those LEDs at all? shall those be configurable?
-	return Gpio::Unassigned;
+	return Gpio::C11;
 }
 
 Gpio getCommsLedPin() {
-  return config->communityCommsLedPin;
+	return Gpio::C10;
 }
 
 Gpio getRunningLedPin() {
-    // open question if we need those LEDs at all? shall those be configurable?
-	return Gpio::Unassigned;
+	return Gpio::C12;
 }
 
 /**
@@ -39,21 +37,15 @@ static void scg_DefaultConfiguration() {
 	setDefaultFrankensoStepperIdleParameters();
 	setCanFrankensoDefaults();
 
+        engineConfiguration->clt.config.bias_resistor = 2490;
+        engineConfiguration->iat.config.bias_resistor = 2490;
+
+	engineConfiguration->binarySerialTxPin = Gpio::Unassigned;
+	engineConfiguration->binarySerialRxPin = Gpio::Unassigned;
+
         // Disable ETBs
         engineConfiguration->etbFunctions[0] = dc_function_e::DC_None;
         engineConfiguration->etbFunctions[1] = dc_function_e::DC_None;
-
-#ifndef HW_NOT_COMMUNITY_FRANKENSO
-  config->communityCommsLedPin = Gpio::D15;  // blue LED on discovery
-#endif
-
-	// set optional subsystem configs
-#if EFI_ONBOARD_MEMS
-	// this would override some values from above
-	configureAccelerometerPins();
-#endif /* EFI_ONBOARD_MEMS */
-
-
 
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_1;
 	engineConfiguration->clt.adcChannel = EFI_ADC_2;
@@ -96,6 +88,16 @@ static void scg_DefaultConfiguration() {
 	engineConfiguration->is_enabled_spi_3 = false;
 }
 
+void scg_boardInitHardware() {
+#ifndef EFI_BOOTLOADER
+	// todo: add to more appropriate location?
+	addConsoleAction("injinfo", [](){
+	    efiPrintf("injinfo index=%d", engine->fuelComputer.brokenInjector);
+	});
+#endif // EFI_BOOTLOADER
+}
+
 void setup_custom_board_overrides() {
+	custom_board_InitHardware = scg_boardInitHardware;
 	custom_board_DefaultConfiguration = scg_DefaultConfiguration;
 }

@@ -11,7 +11,7 @@ const char * getBoardSpecificPinName(brain_pin_e brainPin) {
 		case Gpio::A2: return "Analog Temp 1 (Grey C4)";
 		case Gpio::A3: return "Analog Temp 2 (Grey C5)";
 		case Gpio::A4: return "Analog Volt 3 (Grey B5)";
-		case Gpio::B0: return "Analog Volt 2 (Grey C3)";
+		case Gpio::B0: return "MAP (Grey C3)";
 		case Gpio::B14: return "Highside 8 (Black B8)";
 		case Gpio::B15: return "Highside 7 (Black B7)";
 		case Gpio::C13: return "Digital 1 or VR/Hall (Grey B7-A6/B6)";

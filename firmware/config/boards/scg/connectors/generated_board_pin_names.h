@@ -37,7 +37,7 @@
 #define PIN_15_event_inputs C13
 #define PIN_15_switch_inputs C13
 #define PIN_19_switch_inputs B0
-#define PIN_19_analog_inputs EFI_ADC_10
+#define PIN_19_analog_inputs EFI_ADC_16
 #define PIN_20_switch_inputs A2
 #define PIN_20_analog_inputs EFI_ADC_2
 #define PIN_21_switch_inputs A3

@@ -73,9 +73,9 @@ pins:
     type: 5v
 
   - pin: 19
-    id: [B0, EFI_ADC_10]
+    id: [B0, EFI_ADC_16]
     class: [switch_inputs, analog_inputs]
-    ts_name: Analog Volt 2 (Grey C3)
+    ts_name: MAP (Grey C3)
     type: av
 
   - pin: 20
