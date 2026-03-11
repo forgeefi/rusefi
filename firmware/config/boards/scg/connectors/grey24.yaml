@@ -1,0 +1,181 @@
+pins:
+  - pin: 1
+    function: Sensor GND
+    type: sgnd
+
+  - pin: 2
+    function: Sensor GND
+    type: sgnd
+
+  - pin: 3
+    function: CAN High
+    type: can
+
+  - pin: 4
+    function: CAN Low
+    type: can
+
+  - pin: 5
+    type: vr
+
+  - pin: 6
+    type: vr
+
+  - pin: 7
+    id: [E6, E6]
+    class: [event_inputs, switch_inputs]
+    ts_name: Digital 1 or VR/Hall (Grey A7, Grey A5/C6)
+    type: din
+
+  - pin: 8
+    type: 5v
+
+  - pin: 9
+    type: 5v
+
+  - pin: 10
+    type: 5v
+
+  - pin: 11
+    id: [A1, EFI_ADC_10]
+    class: [switch_inputs, analog_inputs]
+    ts_name: Analog Volt 1 (Grey B3)
+    type: av
+
+  - pin: 12
+    id: [E1, E1]
+    class: [event_inputs, switch_inputs]
+    ts_name: Clutch (Grey B4)
+    type: din
+
+  - pin: 13
+    id: [A4, EFI_ADC_9]
+    class: [switch_inputs, analog_inputs]
+    ts_name: Analog Volt 3 (Grey B5)
+    type: av
+
+  - pin: 14
+    type: vr
+
+  - pin: 15
+    id: [C13, C13]
+    class: [event_inputs, switch_inputs]
+    ts_name: Digital 1 or VR/Hall (Grey B7, A6/B6)
+    type: din
+
+  - pin: 16
+    type: 12v
+
+  - pin: 17
+    type: 12v
+
+  - pin: 18
+    type: 5v
+
+  - pin: 19
+    id: [B0, EFI_ADC_12]
+    class: [switch_inputs, analog_inputs]
+    ts_name: Analog Volt 2 (Grey C3)
+    type: av
+
+  - pin: 20
+    id: [A2, EFI_ADC_14]
+    class: [switch_inputs, analog_inputs]
+    ts_name: Analog Temp 1 (Grey C4)
+    type: at
+
+  - pin: 21
+    id: [A3, EFI_ADC_11]
+    class: [switch_inputs, analog_inputs]
+    ts_name: Analog Temp 2 (Grey C5)
+    type: at
+
+  - pin: 22
+    type: vr
+
+  - pin: 23
+    type: 12v
+
+  - pin: 24
+    type: 12v
+
+info:
+  title: SCG
+  name: Grey24
+  cid: Grey24
+  image:
+    file: white35.jpg
+  pins:
+    - pin: 1
+      x: 216
+      y: 288
+    - pin: 2
+      x: 320
+      y: 288
+    - pin: 3
+      x: 424
+      y: 288
+    - pin: 4
+      x: 528
+      y: 288
+    - pin: 5
+      x: 632
+      y: 288
+    - pin: 6
+      x: 736
+      y: 288
+    - pin: 7
+      x: 840
+      y: 288
+    - pin: 8
+      x: 944
+      y: 288
+    - pin: 9
+      x: 1048
+      y: 288
+    - pin: 10
+      x: 1152
+      y: 288
+    - pin: 11
+      x: 1256
+      y: 288
+    - pin: 12
+      x: 1360
+      y: 288
+    - pin: 13
+      x: 268
+      y: 392
+    - pin: 14
+      x: 372
+      y: 392
+    - pin: 15
+      x: 476
+      y: 392
+    - pin: 16
+      x: 580
+      y: 392
+    - pin: 17
+      x: 684
+      y: 392
+    - pin: 18
+      x: 788
+      y: 392
+    - pin: 19
+      x: 892
+      y: 392
+    - pin: 20
+      x: 996
+      y: 392
+    - pin: 21
+      x: 1100
+      y: 392
+    - pin: 22
+      x: 1204
+      y: 392
+    - pin: 23
+      x: 1308
+      y: 392
+    - pin: 24
+      x: 216
+      y: 496
+
