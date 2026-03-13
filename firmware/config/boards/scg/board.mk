@@ -51,6 +51,7 @@ DDEFS += -DUSB_DESCRIPTOR_STRING_CONTENT="'F', 0, 'o', 0, 'r', 0, 'g', 0, 'e', 0
 # SCG has external SPI flash (W25Q16JVSSIQ) using ChibiOS MFS driver
 include $(PROJECT_DIR)/hw_layer/ports/stm32/use_higher_level_flash_api.mk
 include $(PROJECT_DIR)/hw_layer/drivers/flash/w25q/w25q_single_spi.mk
+USE_FATFS = no
 DDEFS += -DEFI_STORAGE_SD=FALSE
 DDEFS += -DEFI_STORAGE_MFS_EXTERNAL=TRUE
 DDEFS += -DSNOR_SPI_WORKAROUND_CACHE=TRUE
