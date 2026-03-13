@@ -14,7 +14,7 @@ FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install tools matching misc/actions/ubuntu-install-tools.sh + Java 17
+# Install tools matching misc/actions/ubuntu-install-tools.sh
 RUN apt-get update && apt-get install -y \
     make \
     gcc-multilib \
@@ -26,13 +26,20 @@ RUN apt-get update && apt-get install -y \
     zip \
     dosfstools \
     colordiff \
-    openjdk-17-jdk-headless \
     wget \
     xz-utils \
     git \
     xxd \
     python3 \
     bc \
+    curl \
+    gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Zulu JDK 17 (matches CI actions/setup-java distribution: 'zulu', java-version: '17')
+RUN curl -fsSL https://repos.azul.com/azul-repo.key | gpg --dearmor -o /usr/share/keyrings/azul.gpg \
+    && echo "deb [signed-by=/usr/share/keyrings/azul.gpg] https://repos.azul.com/zulu/deb stable main" > /etc/apt/sources.list.d/zulu.list \
+    && apt-get update && apt-get install -y zulu17-jdk \
     && rm -rf /var/lib/apt/lists/*
 
 # Install official ARM GNU Toolchain 14.2.Rel1 (matches CI carlosperate/arm-none-eabi-gcc-action release: '14.2.Rel1')
