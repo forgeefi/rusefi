@@ -18,11 +18,11 @@ if [ -z "$META" ]; then
     exit 1
 fi
 
-cd /rusefi/firmware
-
-source config/boards/common_script_read_meta_env.inc "$META"
+# Docker runs as root; suppress git's dubious ownership error on the mounted repo
+git config --global --add safe.directory /rusefi
 
 echo "=== Step 1: Config generation ==="
-make config -j$(nproc) -r
+bash /rusefi/firmware/bin/compile.sh "$META" config
+
 echo "=== Step 2: Firmware build (target: $TARGET) ==="
-make "$TARGET" -j$(nproc) -r
+bash /rusefi/firmware/bin/compile.sh "$META" "$TARGET"
