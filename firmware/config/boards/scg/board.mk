@@ -47,3 +47,12 @@ ifndef IS_RE_BOOTLOADER
 endif
 
 DDEFS += -DUSB_DESCRIPTOR_STRING_CONTENT="'F', 0, 'o', 0, 'r', 0, 'g', 0, 'e', 0, 'E', 0, 'F', 0, 'I', 0, ' ', 0, 'S', 0, 'C', 0, 'G', 0"
+
+# SCG has external SPI flash (W25Q16JVSSIQ) using ChibiOS MFS driver
+include $(PROJECT_DIR)/hw_layer/ports/stm32/use_higher_level_flash_api.mk
+include $(PROJECT_DIR)/hw_layer/drivers/flash/w25q/w25q_single_spi.mk
+DDEFS += -DEFI_STORAGE_SD=FALSE
+DDEFS += -DEFI_STORAGE_MFS_EXTERNAL=TRUE
+DDEFS += -DSNOR_SPI_WORKAROUND_CACHE=TRUE
+DDEFS += -DEFI_FILE_LOGGING=FALSE
+BOARDCPPSRC += $(BOARD_DIR)/board_storage.cpp
