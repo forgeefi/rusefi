@@ -9,8 +9,6 @@
 # Example:
 #   docker run --rm -v "$(pwd):/rusefi" rusefi-build config/boards/proteus/meta-info-proteus_f4.env
 
-set -e
-
 META="$1"
 TARGET="${2:-all}"
 
