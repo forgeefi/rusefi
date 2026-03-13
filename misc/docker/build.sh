@@ -20,8 +20,9 @@ fi
 
 cd /rusefi/firmware
 
-echo "=== Step 1: Config generation ==="
-bash bin/compile.sh "$META" config
+source config/boards/common_script_read_meta_env.inc "$META"
 
+echo "=== Step 1: Config generation ==="
+make config -j$(nproc) -r
 echo "=== Step 2: Firmware build (target: $TARGET) ==="
-bash bin/compile.sh "$META" "$TARGET"
+make "$TARGET" -j$(nproc) -r
