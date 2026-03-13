@@ -48,9 +48,12 @@ ENV PATH="/opt/arm-toolchain/bin:${PATH}"
 # Verify toolchain
 RUN arm-none-eabi-gcc --version
 
+COPY build.sh /build.sh
+RUN chmod +x /build.sh
+
 WORKDIR /rusefi
 
-# Usage: docker run --rm -v "$(pwd):/rusefi" rusefi-build <meta-info-path>
+# Usage: docker run --rm -v "$(pwd):/rusefi" rusefi-build <meta-info-path> [make-target]
 # e.g.   docker run --rm -v "$(pwd):/rusefi" rusefi-build config/boards/proteus/meta-info-proteus_f4.env
-ENTRYPOINT ["bash", "firmware/bin/compile.sh"]
-CMD ["--help"]
+# e.g.   docker run --rm -v "$(pwd):/rusefi" rusefi-build config/boards/proteus/meta-info-proteus_f4.env build_both_bundles
+ENTRYPOINT ["/build.sh"]
