@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y \
     git \
     xxd \
     python3 \
+    bc \
     && rm -rf /var/lib/apt/lists/*
 
 # Install official ARM GNU Toolchain 14.2.Rel1 (matches CI carlosperate/arm-none-eabi-gcc-action release: '14.2.Rel1')

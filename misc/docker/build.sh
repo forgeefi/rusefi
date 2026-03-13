@@ -10,7 +10,7 @@
 #   docker run --rm -v "$(pwd):/rusefi" rusefi-build config/boards/proteus/meta-info-proteus_f4.env
 
 META="$1"
-TARGET="${2:-all}"
+TARGET="${2:-build_both_bundles}"
 
 if [ -z "$META" ]; then
     echo "Usage: build.sh <meta-info-path> [make-target]"
