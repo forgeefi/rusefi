@@ -18,8 +18,9 @@ if [ -z "$META" ]; then
     exit 1
 fi
 
-# Docker runs as root; suppress git's dubious ownership error on the mounted repo
-git config --global --add safe.directory /rusefi
+# Docker runs as root; allow git to operate on any mounted directory
+# (exact path matching can fail if Docker resolves the volume path differently)
+git config --global --add safe.directory '*'
 
 echo "=== Step 1: Config generation ==="
 bash /rusefi/firmware/bin/compile.sh "$META" config
