@@ -47,6 +47,10 @@ static void scg_DefaultConfiguration() {
         engineConfiguration->etbFunctions[0] = dc_function_e::DC_None;
         engineConfiguration->etbFunctions[1] = dc_function_e::DC_None;
 
+	engineConfiguration->vbattAdcChannel = EFI_ADC_0;
+	engineConfiguration->vbattDividerCoeff = 4.9f;  // (3.9k + 1k) / 1k
+	engineConfiguration->adcVcc = 3.3f;
+
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_1;
 	engineConfiguration->clt.adcChannel = EFI_ADC_2;
 	engineConfiguration->iat.adcChannel = EFI_ADC_3;
