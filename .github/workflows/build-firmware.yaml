@@ -132,19 +132,10 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-    - uses: actions/checkout@v7
-
     - name: Set matrix
       id: set-matrix
-      working-directory: firmware
       run: |
-        export EVENT_NAME="${{github.event_name}}"
-        export RUN_ATTEMPT="${{github.run_attempt}}"
-        read -d '' COMMIT_MESSAGE << EOM || true
-        ${{ github.event.head_commit.message }}
-        EOM
-        export COMMIT_MESSAGE
-        echo "matrix=$(bash bin/generate_matrix.sh config/boards)" >> $GITHUB_OUTPUT
+        echo 'matrix={"include": [{"build-target": "scg", "meta-info": "config/boards/scg/meta-info.env"}, {"build-target": "proteus_f4", "meta-info": "config/boards/proteus/meta-info-proteus_f4.env"}]}' >> $GITHUB_OUTPUT
 
   build-firmware:
     runs-on: ubuntu-latest
