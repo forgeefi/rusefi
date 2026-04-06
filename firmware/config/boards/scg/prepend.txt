@@ -1,4 +1,4 @@
-#define ts_show_vbatt false
+#define ts_show_vbatt true
 
 #define ts_show_tps_sent false
 

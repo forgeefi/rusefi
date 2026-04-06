@@ -99,6 +99,11 @@ pins:
   - pin: 24
     type: 12v
 
+  - pin: Battery Sense
+    id: [A0, EFI_ADC_0]
+    class: [analog_inputs]
+    ts_name: Battery Sense
+
 info:
   title: SCG
   name: Grey24
