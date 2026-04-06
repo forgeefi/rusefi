@@ -50,6 +50,7 @@ static void scg_DefaultConfiguration() {
 	engineConfiguration->vbattAdcChannel = EFI_ADC_0;
 	engineConfiguration->vbattDividerCoeff = 7.2f;
 	engineConfiguration->adcVcc = 3.3f;
+	engineConfiguration->analogInputDividerCoefficient = 1.66f;
 
 	engineConfiguration->map.sensor.hwChannel = EFI_ADC_1;
 	engineConfiguration->clt.adcChannel = EFI_ADC_2;
