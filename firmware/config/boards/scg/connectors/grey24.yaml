@@ -100,8 +100,8 @@ pins:
     type: 12v
 
   - pin: Battery Sense
-    id: [A0, EFI_ADC_0]
-    class: [analog_inputs]
+    id: EFI_ADC_0
+    class: analog_inputs
     ts_name: Battery Sense
 
 info:
@@ -183,4 +183,3 @@ info:
     - pin: 24
       x: 216
       y: 496
-
